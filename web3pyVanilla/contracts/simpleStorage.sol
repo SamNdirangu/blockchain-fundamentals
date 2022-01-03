@@ -4,25 +4,29 @@ pragma solidity ^0.6.0;
 
 contract SimpleStorage {
     //This is initialized to zero
-    uint256 favNumber;
+    uint256 favNumber = 545;
 
-    function store(uint256 _favNumber) public {
+    //Store a provided number to our favnumber variable
+    function storeFavNumber(uint256 _favNumber) public {
         favNumber = _favNumber;
     }
 
-    function getNumber() public view returns (uint256) {
+    //Gets the stored number in our favnumber
+    function getFavNumber() public view returns (uint256) {
         return favNumber;
     }
 
+    //a STRUCT kinda similar to a classs in dart or js
     struct Person {
         string firstName;
         string secondName;
         uint128 birthdayYear;
     }
-
+    //Create an object example of type struct person initialized with my names and birthyear
     Person public example =
         Person({firstName: "Sam", secondName: "Ndirangu", birthdayYear: 1995});
     Person[] public people;
+    //Create a mappping to map the firstname to birth year.
     mapping(string => uint128) public getByFirstName;
 
     function addPerson(

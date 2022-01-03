@@ -4,7 +4,7 @@ pragma solidity ^0.6.0;
 
 import "./simpleStorage.sol";
 //Contract inheritance enable with is statement
-contract StorageFactory is SimpleStorage {
+contract StorageFactory {
     SimpleStorage[] public simpleStorageArray;
 
     function createSimpleStorageContract() public {
